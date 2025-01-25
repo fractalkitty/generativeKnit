@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
-	let { children } = $props();
+	import '$lib/styles/theme.css';
 </script>
 
-{@render children()}
+<div class="min-h-screen bg-[var(--color-background)]">
+	<slot />
+</div>

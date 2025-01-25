@@ -1,0 +1,25 @@
+:root {
+    --color-background: #f9f6f2;
+    /* Warm cream */
+    --color-primary: #d8e2dc;
+    /* Sage cream */
+    --color-secondary: #ccd5e6;
+    /* Dusty blue */
+    --color-tertiary: #e8d0b3;
+    /* Warm butterscotch */
+    --color-quaternary: #d5c3b8;
+    /* Coffee cream */
+    --color-text: #4a3c32;
+    /* Deep coffee */
+
+    --color-primary-btn: #6b887a;
+    /* Muted sage */
+    --color-secondary-btn: #657b94;
+    /* Faded denim */
+    --color-tertiary-btn: #b38867;
+    /* Caramel coffee */
+    --color-quaternary-btn: #8d6e63;
+    /* Rich mocha */
+    --font-heading: 'M PLUS 1', sans-serif;
+    --font-body: 'M PLUS 1', sans-serif;
+}
