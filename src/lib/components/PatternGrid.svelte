@@ -72,13 +72,13 @@
 		let y = 50;
 		//image
 		const img = new Image();
-		img.src = '/src/lib/images/Warmwyrm.png';
+		img.src = '/Warmwyrm.png';
 		img.onload = () => {
 			ctx.drawImage(img, 50, 0, 170, 170);
 		};
 		// Add hat image to the right middle of the page
 		const hatImg = new Image();
-		hatImg.src = '/src/lib/images/hat.png';
+		hatImg.src = '/hat.png';
 		hatImg.onload = () => {
 			const hatX = 540;
 			const hatY = 400;
