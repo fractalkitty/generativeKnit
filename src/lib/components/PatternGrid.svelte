@@ -3,10 +3,13 @@
 
 	export let mode: string;
 	export let nPanel: number;
+	export let refreshKey: number;
 	export let increases: string[];
 	export let decreases: string[];
+
 	// In PatternGrid.svelte
 	export let canvas: HTMLCanvasElement;
+	// export let refreshKey = 0;
 	import { onMount } from 'svelte';
 	// Grid dimensions
 	let rows = Math.random() < 0.5 ? 6 : 8;
@@ -99,8 +102,7 @@
 
 		// description
 		ctx.font = '16px Arial';
-		const text =
-			'This medium/small hat knitted from bottom to top.. The hat has a pattern that repeats 5 times each round. Size can be adjusted with yarn/needles.';
+		const text = `This medium/small hat knitted from bottom to top. The hat has a pattern that repeats ${nPanel || 5} times each round. Size can be adjusted with yarn/needles an the number of times Chart A is worked.`;
 		const maxWidth = 550;
 		const lineHeight = 20;
 		const words = text.split(' ');
@@ -206,14 +208,14 @@
 		y += 50;
 		// Instructions
 		ctx.font = '16px Arial';
-
+		let nStsAround = nPanel * panelSize;
 		const steps = [
-			'Cast on 100 stitches to 3.5mm circular needles.',
+			`Cast on ${Math.round(panelSize * nPanel) || 100} stitches to 3.5mm circular needles.`,
 			'Repeat {k,p} until there is 1.5in of ribbing.',
 			'For the rest of the hat switch to 4mm needles.',
-			'Work chart A 6 times. (place markers)',
-			'Work chart B 1 time (switch to dpns when needed).',
-			'To close, repeat {ssk,k,k} until 6-8stitches remain.',
+			'Work Chart A 6 times. Place markers. ',
+			'Work Chart B 1 time (switch to dpns when needed).',
+			'To close, repeat {ssk,k,k} until 6-8 stitches remain.',
 			'Cut yarn and thread tail through embroidery needle.',
 			'Pass needle through the remaining stitches and cinch.',
 			'Weave in the ends.'
@@ -298,8 +300,8 @@
 	onMount(drawCanvas);
 	//runes  4 of them state/props/variables/effect
 	$: {
-		if (mode || nPanel || increases || decreases) {
-			panelSize = nPanel === 4 ? 25 : nPanel === 5 ? 20 : nPanel === 6 ? 17 : 0;
+		if (mode || nPanel || increases || decreases || refreshKey) {
+			panelSize = nPanel === 4 ? 25 : nPanel === 5 ? 20 : nPanel === 6 ? 17 : 20;
 			cols = panelSize;
 			patternArrray = [];
 			fillPatternArray();
