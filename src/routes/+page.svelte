@@ -52,7 +52,7 @@
 
 <main class="container mx-auto max-w-[95vw] bg-[var(--color-background)] px-4 py-6 md:max-w-4xl">
 	<header class="mb-8 flex items-center justify-start gap-8">
-		<div class="wyrm-img relative h-40 w-40">
+		<div class="wyrm-img relative h-40 w-40 overflow-hidden rounded-full">
 			<img
 				bind:this={wyrmImg}
 				src="/wyrmstatic.png"
