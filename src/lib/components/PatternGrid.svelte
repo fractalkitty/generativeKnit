@@ -102,7 +102,7 @@
 
 		// description
 		ctx.font = '16px Arial';
-		const text = `This medium/small hat knitted from bottom to top. The hat has a pattern that repeats ${nPanel || 5} times each round. Size can be adjusted with yarn/needles an the number of times Chart A is worked.`;
+		const text = `This medium/small hat knitted from bottom to top. The hat has a pattern that repeats ${nPanel || 5} times each round. Size can be adjusted with yarn/needles and the number of times Chart A is worked.`;
 		const maxWidth = 550;
 		const lineHeight = 20;
 		const words = text.split(' ');
@@ -213,7 +213,7 @@
 			`Cast on ${Math.round(panelSize * nPanel) || 100} stitches to 3.5mm circular needles.`,
 			'Repeat {k,p} until there is 1.5in of ribbing.',
 			'For the rest of the hat switch to 4mm needles.',
-			'Work Chart A 6 times. Place markers. ',
+			'Work Chart A 5-7 times based on desired height. Place markers. ',
 			'Work Chart B 1 time (switch to dpns when needed).',
 			'To close, repeat {ssk,k,k} until 6-8 stitches remain.',
 			'Cut yarn and thread tail through embroidery needle.',
@@ -307,7 +307,7 @@
 			fillPatternArray();
 			knitArray = ['knit', ...Array(panelSize - 1).fill('knit')];
 			for (let i = 0; i < rows; i++) {
-				if (i % 2 === 0) {
+				if (i % 2 === 1) {
 					// Create a new array copy for even rows
 					patternRows[i] = [...knitArray];
 				} else {
